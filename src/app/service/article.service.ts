@@ -22,4 +22,10 @@ export class ArticleService {
     this.articles=JSON.parse(localStorage.getItem("articles"));
     return this.articles[id];
   }
+  delete(id){
+     this.articles=this.getArts();
+     this.articles.splice(id,1);
+     localStorage.setItem("articles",JSON.stringify(this.articles));
+
+  }
 }
