@@ -10,6 +10,14 @@ body {
   font-size: 14px;
 }
 
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
+.img-fluid{
+  width: 90%;
+  height: auto;
+}
 /* line 9, E:/168 Daren Blog/168_Daren_Blog_html/sass/_common.scss */
 .message_submit_form:focus {
   outline: none;
