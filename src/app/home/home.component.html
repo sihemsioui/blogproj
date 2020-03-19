@@ -1,0 +1,51 @@
+ <section class="all_post archive_post">
+        <div class="container">
+            <div class="row" >
+                <div class="col-lg-8" >
+                    <div *ngFor="let article of articles">
+                            <div class="single_post media post_3">
+                                <div class="single_post_img">
+                                    <img src="/assets/img/feature_post_2.png" alt="">
+                                    <a class="category_btn">{{article.categorie}}</a>
+                                </div>
+                                <div class="post_text_1 media-body align-self-center">
+                                    <p><span> By Michal</span> {{article.date | date}}</p>
+                                    <a href="single-blog.html">
+                                        <h3>{{ article.description}}</h3>
+                                    </a>
+                                    <div class="post_icon">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                          
+                        
+                        
+                        
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar_widget">
+                        <div class="sidebar_tittle">
+                            <h3>Search Objects</h3>
+                        </div>
+                        <form action="#">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder='Search Keyword'
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                                    
+                                </div>
+                            </div>
+                        </form>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
