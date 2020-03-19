@@ -18,4 +18,8 @@ export class ArticleService {
   getArts(){
     return JSON.parse(localStorage.getItem("articles"));
   }
+  getArticle(id){
+    this.articles=JSON.parse(localStorage.getItem("articles"));
+    return this.articles[id];
+  }
 }

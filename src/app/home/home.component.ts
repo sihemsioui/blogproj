@@ -9,11 +9,12 @@ import { ArticleService } from '../service/article.service';
 export class HomeComponent implements OnInit {
 
   articles: any;
+  term: any;
+
   constructor(private articleSvc: ArticleService) { }
 
   ngOnInit(): void {
     this.articles= this.articleSvc.getArts();
-    console.log(this.articles);
   }
 
 }

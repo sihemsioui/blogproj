@@ -2,16 +2,16 @@
         <div class="container">
             <div class="row" >
                 <div class="col-lg-8" >
-                    <div *ngFor="let article of articles">
+                    <div *ngFor="let article of articles | filter:term, let i=index">
                             <div class="single_post media post_3">
                                 <div class="single_post_img">
                                     <img src="/assets/img/feature_post_2.png" alt="">
-                                    <a class="category_btn">{{article.categorie}}</a>
+                                    <a  class="category_btn">{{article.categorie}}</a>
                                 </div>
                                 <div class="post_text_1 media-body align-self-center">
                                     <p><span> By Michal</span> {{article.date | date}}</p>
-                                    <a href="single-blog.html">
-                                        <h3>{{ article.description}}</h3>
+                                    <a [routerLink]="['/detail',i]">
+                                        <h3>{{ article.title}}</h3>
                                     </a>
                                     <div class="post_icon">
                                         
@@ -34,7 +34,7 @@
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder='Search Keyword'
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'" [(ngModel)]="term">
                                     
                                 </div>
                             </div>
