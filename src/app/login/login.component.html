@@ -1,1 +1,31 @@
-<p>login works!</p>
+
+
+  <form [formGroup]="myForm" class="example-form" (ngSubmit)="onSubmit()">
+    <div [hidden]="isAuth || isAuth==null" >
+      <h4 class="text-danger"> wrong name or password</h4>
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput  required type="text" placeholder="Name" formControlName="name">
+      
+    </mat-form-field>
+    
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="password" type="password"  required formControlName="password">
+        
+        
+
+    </mat-form-field>
+
+    
+    <div class="button-wrapper">
+        <button mat-flat-button class="btn btn-primary">Submit</button>
+      </div>
+  </form>
+  <div [hidden]="isAuth || isAuth==null">
+    <h4> wrong name or password</h4>
+  </div>
+  
