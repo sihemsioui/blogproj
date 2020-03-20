@@ -2,7 +2,7 @@
 
   <form [formGroup]="myForm" class="example-form" (ngSubmit)="onSubmit()">
     <div [hidden]="isAuth || isAuth==null" >
-      <h4 class="text-danger"> wrong name or password</h4>
+      <h4 class="text-danger">  name or password is incorrect</h4>
     </div>
 
     <mat-form-field class="example-full-width">
@@ -22,10 +22,23 @@
 
     
     <div class="button-wrapper">
-        <button mat-flat-button class="btn btn-primary">Submit</button>
+        <button mat-flat-button style="margin-bottom: 20px;" class="btn btn-primary">Submit</button>
       </div>
+
+      <ul class="login-more p-t-190">
+						
+
+        <li>
+            <span class="txt1">
+                Don’t have an account?
+            </span>
+    
+            <a routerLink="/register" class="txt2">
+                register
+            </a>
+        </li>
+    </ul>
   </form>
-  <div [hidden]="isAuth || isAuth==null">
-    <h4> wrong name or password</h4>
-  </div>
+  
+ 
   

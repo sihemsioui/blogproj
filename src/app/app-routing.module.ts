@@ -5,12 +5,13 @@ import { AddartComponent } from './addart/addart.component';
 import { ArtdetailComponent } from './artdetail/artdetail.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { GuardGuard } from './guard/guard.guard';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'add', component: AddartComponent },
+  { path: 'home',canActivate: [GuardGuard], component: HomeComponent },
+  { path: 'add', canActivate: [GuardGuard],component: AddartComponent },
   { path: 'detail/:id', component: ArtdetailComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
