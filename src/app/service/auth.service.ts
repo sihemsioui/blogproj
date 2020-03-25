@@ -28,6 +28,7 @@ export class AuthService {
     }
     if(!this.isAuth){
       this.isAuth=false;    }
+      console.log(this.isAuth);
   }
 
   register(user){
@@ -37,6 +38,11 @@ export class AuthService {
     localStorage.setItem("users",JSON.stringify(this.users)); 
     this.gotoList();
   }
+  logout(){
+    this.isAuth=false;
+    this.router.navigate(['/login']);
+  }
+
   gotoList() {
     this.router.navigate(['/home']);
   }
@@ -66,4 +72,6 @@ export class AuthService {
     }
   }
   
+
+
 }
