@@ -11,24 +11,23 @@ import { ArticleService } from '../service/article.service';
 export class AddartComponent implements OnInit {
    article: Article =new Article();
   submitted=false;
-  file: File= null;
+  file: File;
    date:any;
-  constructor(private articlesvc: ArticleService,private auth: AuthService) { }
+   fileb:string;
+  constructor(public articlesvc: ArticleService,private auth: AuthService) { }
 
   ngOnInit(): void {
   }
   onFileSelected(event){
-    console.log(event);
 
     this.file=event.target.files[0];
-    localStorage.setItem('file', event.target.files[0]);
-    console.log(this.file);
-  
   }
   onSubmit(){
     this.article.date=new Date();
-  //  this.article.userName=this.auth.user.name;
-    this.articlesvc.add(this.article);
+    
+        this.articlesvc.add(this.article,this.file);
     this.submitted=true;
+    console.log(this.fileb);
+
   }
 }

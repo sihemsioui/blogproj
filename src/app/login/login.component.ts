@@ -25,14 +25,12 @@ export class LoginComponent implements OnInit {
   }
   onSubmit(){
     this.user=<User>this.myForm.value;
-    console.log(this.user);
     this.authService.login(this.myForm.value);  
      this.isAuth=this.authService.isAuth;
      if(this.isAuth){
       this.authService.gotoList();
 
      }
-     console.log(this.isAuth)
   }
 
 

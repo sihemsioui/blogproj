@@ -28,12 +28,10 @@ export class AuthService {
     }
     if(!this.isAuth){
       this.isAuth=false;    }
-      console.log(this.isAuth);
   }
 
   register(user){
     this.users=JSON.parse(localStorage.getItem("users"));
-
     this.users.push(user);
     localStorage.setItem("users",JSON.stringify(this.users)); 
     this.gotoList();

@@ -10,11 +10,15 @@ export class HomeComponent implements OnInit {
 
   articles: any;
   term: any;
+  files:any;
 
-  constructor(private articleSvc: ArticleService) { }
+  constructor(public articleSvc: ArticleService) { }
 
   ngOnInit(): void {
     this.articles= this.articleSvc.getArts();
+    this.files=this.articleSvc.getFiles();
+    console.log(this.files);
   }
+ 
 
 }

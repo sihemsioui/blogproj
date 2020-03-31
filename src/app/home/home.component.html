@@ -1,11 +1,12 @@
  <section class="all_post archive_post">
         <div class="container">
+            
             <div class="row" >
                 <div class="col-lg-8" >
                     <div *ngFor="let article of articles | filter:term, let i=index">
                             <div class="single_post media post_3">
                                 <div class="single_post_img">
-                                    <img src="/assets/img/feature_post_2.png" alt="">
+                                    <img src={{files[i]}} alt="">
                                     <a  class="category_btn">{{article.categorie}}</a>
                                 </div>
                                 <div class="post_text_1 media-body align-self-center">
